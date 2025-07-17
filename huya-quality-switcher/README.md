@@ -19,10 +19,5 @@
 1. 打开脚本文件
 2. 找到以下代码块并取消注释：
    ```js
-   /*
-   (function () {
-       const targetQuality = '蓝光4M'; // ← 这里修改为你想要的画质
-       ...
-   })();
-   */
+   const targetQuality = "蓝光4M"; // ← 这里修改为你想要的画质
    ```
