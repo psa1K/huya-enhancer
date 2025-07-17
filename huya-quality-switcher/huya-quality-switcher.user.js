@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         虎牙直播自动切换画质
+// @description  功能：虎牙直播自动切换最高画质、自动切换指定画质
 // @namespace    https://github.com/psa1K
 // @icon         https://www.huya.com/favicon.ico
 // @version      1.0.0
-// @description  功能：虎牙直播自动切换最高画质、自动切换指定画质
 // @author       psa1K
 // @match        *://*.huya.com/*
 // @grant        none
