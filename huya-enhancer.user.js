@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         虎牙直播自动切换画质111
+// @name         虎牙直播自动切换画质
 // @namespace    https://github.com/psa1K
 // @icon         https://www.huya.com/favicon.ico
 // @version      1.1.0
