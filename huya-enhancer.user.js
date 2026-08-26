@@ -36,15 +36,6 @@
 		const $cur = $(".player-videotype-cur");
 		if ($list.length === 0 || $cur.length === 0) return;
 
-		// --- 自动进入剧场模式（播放器就绪后只执行一次，过早点击会被忽略） ---
-		if (THEATER_MODE && !theaterDone) {
-			const btnEl = $("#player-fullpage-btn")[0];
-			if (btnEl && (!btnEl.style || btnEl.style.display !== "none")) {
-				btnEl.click();
-				theaterDone = true;
-			}
-		}
-
 		// --- 解锁扫码限制的画质 ---
 		$list.each((_, li) => {
 			const dataObj = $(li).data("data");
@@ -64,13 +55,20 @@
 		if (!target) return;
 
 		if (current === target) {
+			// --- 自动进入剧场模式：画质就位后最后执行，避免与画质切换互相干扰 ---
+			if (THEATER_MODE && !theaterDone) {
+				const btnEl = $("#player-fullpage-btn")[0];
+				if (btnEl && (!btnEl.style || btnEl.style.display !== "none")) {
+					btnEl.click();
+					theaterDone = true;
+				}
+			}
 			clearInterval(timer); // 已就位：停止轮询，之后可自由切换画质
-			return;
-		}
-
-		const $target = $list.filter((_, el) => itemText(el) === target);
-		if ($target.length > 0) {
-			$target[0].click();
+		} else {
+			const $target = $list.filter((_, el) => itemText(el) === target);
+			if ($target.length > 0) {
+				$target[0].click();
+			}
 		}
 	}, POLL_INTERVAL_MS);
 })();
