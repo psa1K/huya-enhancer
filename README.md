@@ -4,8 +4,14 @@
 
 ## 安装
 
-- Greasyfork：<https://greasyfork.org/zh-CN/scripts/542837>
-- 或手动安装本仓库中的 `huya-enhancer.user.js`
+1. 安装 [Tampermonkey](https://www.tampermonkey.net/) 浏览器扩展
+   （Chrome / Firefox / Edge 均支持，Violentmonkey 同样适用）
+
+2. 以下方式任选其一：
+
+   **[点击安装 huya-enhancer.user.js](https://github.com/psa1K/huya-enhancer/raw/refs/heads/main/huya-enhancer.user.js)**
+
+   或前往 [Greasyfork](https://greasyfork.org/zh-CN/scripts/542837) 安装
 
 ## 功能
 

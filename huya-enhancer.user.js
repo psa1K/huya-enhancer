@@ -2,7 +2,7 @@
 // @name         虎牙直播自动切换画质
 // @namespace    https://github.com/psa1K
 // @icon         https://www.huya.com/favicon.ico
-// @version      1.3.1
+// @version      1.3.2
 // @description  功能：虎牙直播跳过扫码限制、自动切换最高画质、自动切换指定画质、自动进入剧场模式
 // @author       psa1K
 // @match        *://*.huya.com/*
@@ -10,8 +10,7 @@
 // @license      MIT
 // @noframes
 // @run-at       document-idle
-// @downloadURL https://update.greasyfork.org/scripts/542837/%E8%99%8E%E7%89%99%E7%9B%B4%E6%92%AD%E8%87%AA%E5%8A%A8%E5%88%87%E6%8D%A2%E7%94%BB%E8%B4%A8.user.js
-// @updateURL https://update.greasyfork.org/scripts/542837/%E8%99%8E%E7%89%99%E7%9B%B4%E6%92%AD%E8%87%AA%E5%8A%A8%E5%88%87%E6%8D%A2%E7%94%BB%E8%B4%A8.meta.js
+// @downloadURL https://github.com/psa1K/huya-enhancer/raw/refs/heads/main/huya-enhancer.user.js
 // ==/UserScript==
 
 (function () {
