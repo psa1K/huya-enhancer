@@ -32,7 +32,11 @@
 		}
 		if (typeof $ !== "function") return;
 
-		// --- 自动进入剧场模式（只执行一次） ---
+		const $list = $(".player-videotype-list li");
+		const $cur = $(".player-videotype-cur");
+		if ($list.length === 0 || $cur.length === 0) return;
+
+		// --- 自动进入剧场模式（播放器就绪后只执行一次，过早点击会被忽略） ---
 		if (THEATER_MODE && !theaterDone) {
 			const btnEl = $("#player-fullpage-btn")[0];
 			if (btnEl && (!btnEl.style || btnEl.style.display !== "none")) {
@@ -40,10 +44,6 @@
 				theaterDone = true;
 			}
 		}
-
-		const $list = $(".player-videotype-list li");
-		const $cur = $(".player-videotype-cur");
-		if ($list.length === 0 || $cur.length === 0) return;
 
 		// --- 解锁扫码限制的画质 ---
 		$list.each((_, li) => {
