@@ -2,7 +2,7 @@
 // @name         虎牙直播自动切换画质
 // @namespace    https://github.com/psa1K
 // @icon         https://www.huya.com/favicon.ico
-// @version      1.3.0
+// @version      1.3.1
 // @description  功能：虎牙直播跳过扫码限制、自动切换最高画质、自动切换指定画质、自动进入剧场模式
 // @author       psa1K
 // @match        *://*.huya.com/*
@@ -21,15 +21,26 @@
 	const THEATER_MODE = true;
 	const POLL_INTERVAL_MS = 1000;
 	const MAX_WAIT_MS = 30000;
+	// 页面 load 事件迟迟不触发时的兜底等待上限，超时后照常开始
+	const LOAD_WAIT_FALLBACK_MS = 8000;
 
 	let elapsed = 0;
 	let theaterDone = false;
+	let pageSettled = document.readyState === "complete";
+	if (!pageSettled) {
+		window.addEventListener("load", () => { pageSettled = true; }, { once: true });
+	}
+
 	const timer = setInterval(() => {
 		elapsed += POLL_INTERVAL_MS;
 		if (elapsed >= MAX_WAIT_MS) {
 			clearInterval(timer);
 			return;
 		}
+		// 等页面完全加载完再动作：加载中途点击会注入额外挂起请求，
+		// 导致标签页转圈不止（load 事件被无限推迟）
+		if (!pageSettled && elapsed < LOAD_WAIT_FALLBACK_MS) return;
+		pageSettled = true; // 兜底：load 卡死也继续工作
 		if (typeof $ !== "function") return;
 
 		const $list = $(".player-videotype-list li");
