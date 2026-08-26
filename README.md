@@ -9,7 +9,7 @@
 
 2. 以下方式任选其一：
 
-   **[点击安装 huya-enhancer.user.js](https://github.com/psa1K/huya-enhancer/raw/refs/heads/main/huya-enhancer.user.js)**
+   点击 [huya-enhancer](https://github.com/psa1K/huya-enhancer/raw/refs/heads/main/huya-enhancer.user.js) 安装
 
    或前往 [Greasyfork](https://greasyfork.org/zh-CN/scripts/542837) 安装
 
