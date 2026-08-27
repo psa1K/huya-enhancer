@@ -19,7 +19,7 @@
 
 (function () {
 	// 未在脚本菜单中设置过时的默认值
-	const DEFAULT_VIEW_MODE = "theater"; // "default" | "theater"
+	const DEFAULT_VIEW_MODE = "default"; // "default" | "theater"
 	const DEFAULT_TARGET_QUALITY = ""; // 留空 = 跟随房间最高画质
 	const POLL_INTERVAL_MS = 1000;
 	const MAX_WAIT_MS = 30000;
