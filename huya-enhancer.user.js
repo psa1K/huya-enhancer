@@ -134,8 +134,15 @@
 				});
 			} catch (e) { /* 解锁失败不阻塞主流程 */ }
 
+			// 优先切到指定画质；本房间不存在时回退到最高画质（不改写保存的偏好）
+			const preferred = getTargetQuality();
+			let target = "";
+			if (preferred && $list.filter((_, el) => itemText(el) === preferred).length > 0) {
+				target = preferred;
+			}
+			if (!target) target = itemText($list[0]);
+
 			const current = $cur.text().trim();
-			const target = getTargetQuality() || itemText($list[0]);
 			if (target) {
 				if (current === target) {
 					qualityDone = true;
